@@ -1,0 +1,23 @@
+<html>
+<head>
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+    <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+</head>
+<body>
+<div id="console"></div>
+<!-- Add an image that we will use to test -->
+<!--<img id="img" crossorigin src="https://i.imgur.com/Fi4j15h.jpg" width="227" height="227"/>-->
+<video autoplay playsinline muted id="webcam" width="224" height="224"></video>
+<button id="class-a">Add A</button>
+<button id="class-b">Add B</button>
+<button id="class-c">Add C</button>
+<button id="save_button">Save</button>
+<!--<button id="load_button">Load</button>-->
+<input id="load_button" type='file' accept='.json'>
+<img id='output'>
+<!-- Load index.js after the content of the page -->
+<script src="index.js"></script>
+</body>
+</html>
