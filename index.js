@@ -62,9 +62,9 @@ const start = async () => {
     document.getElementById('load_button').addEventListener('change', (event) => uploadModel(knnClassifierModel,event));
     document.getElementById('save_button').addEventListener('click', async () => downloadModel(knnClassifierModel));
 
-    document.getElementById('class-a').addEventListener('click', () => addExample(0));
-    document.getElementById('class-b').addEventListener('click', () => addExample(1));
-    document.getElementById('class-c').addEventListener('click', () => addExample(2));
+    document.getElementById('class-a').addEventListener('click', () => addDatasetClass(0));
+    document.getElementById('class-b').addEventListener('click', () => addDatasetClass(1));
+    document.getElementById('class-c').addEventListener('click', () => addDatasetClass(2));
   };
 
   const saveClassifier = async (classifierModel) => {
@@ -119,7 +119,7 @@ const start = async () => {
     reader.readAsDataURL(input.files[0]);
   };
 
-  const addExample = async (classId) => {
+  const addDatasetClass = async (classId) => {
     // Capture an image from the web camera.
     const img = await webcamInput.capture();
 
@@ -134,6 +134,7 @@ const start = async () => {
     img.dispose();
   };
   const imageClassificationWithTransferLearningOnWebcam = async () => {
+    console.log("Machine Learning on the web is ready");
     while (true) {
       if (knnClassifierModel.getNumClasses() > 0) {
         const img = await webcamInput.capture();
