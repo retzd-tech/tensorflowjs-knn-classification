@@ -105,7 +105,7 @@ const start = async () => {
   };
 
   const downloadModel = async (classifierModel) => {
-    saveClassifier(classifierModel);
+    await saveClassifier(classifierModel);
   };
   const putImageToPage = (event) => {
     var input = event.target;
